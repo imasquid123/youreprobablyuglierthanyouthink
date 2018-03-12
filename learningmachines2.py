@@ -5,6 +5,8 @@ TRAIN_URL = "PRECIP_HLY_sample_csv.csv"
 def __init__(self):
 	datamover = PyDict_SetItem()
 	dict[dataholder] = []
+	input_training_data()
+	put_data()
 
 def input_training_data(TRAIN_URL):
 	tf.data.Dataset.from_tensors(TRAIN_URL)
@@ -30,5 +32,3 @@ def put_data(datamover, TRAIN_URL):
 
 		labelobject = tf.Variable(label, string)
 	return dataholder, labelobject
-
-	#why it no dooooooo
