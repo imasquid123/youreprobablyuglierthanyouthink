@@ -23,11 +23,12 @@ def put_data(datamover, TRAIN_URL):
 		
 		#next, move each tensor to a dictionary
 		
-		datamover(dataholder, x, dataobject)
+		datamover(dataholder, label, dataobject)
 		#for now, names of the feature are just ints but i know that's gross
 		
-		x = x+1
+		label = x+1
 
-		#add label
+		labelobject = tf.Variable(label, string)
+	return dataholder, labelobject
 
-		#move this to machinelearning2
+	#why it no dooooooo
