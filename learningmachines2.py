@@ -1,20 +1,18 @@
 import tensorflow as tf
 import csv
-TRAIN_URL = "PRECIP_HLY_sample_csv.csv"
-
 def __init__(self):
 	datamover = PyDict_SetItem()
 	dict[dataholder] = []
 	input_training_data()
 	put_data()
 
-def input_training_data(TRAIN_URL):
-	tf.data.Dataset.from_tensors(TRAIN_URL)
+#def input_training_data(TRAIN_URL):
+#	tf.data.Dataset.from_tensors(TRAIN_URL)
 
-def put_data(datamover, TRAIN_URL):
+def put_data(datamover):
 
 	with open("PRECIP_HLY_sample_csv.csv") as csv_file:
-		reader = csv.reader("PRECIP_HLY_sample_csv.csv", delimiter = ',')
+		reader = csv.reader(csv_file, delimiter = ',')
 
 	for row in reader ():
 
@@ -31,4 +29,5 @@ def put_data(datamover, TRAIN_URL):
 		label = x+1
 
 		labelobject = tf.Variable(label, string)
+		
 	return dataholder, labelobject
