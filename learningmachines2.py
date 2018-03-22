@@ -18,8 +18,8 @@ class Learnmachine:
 
 	#def input_training_data(TRAIN_URL):
 	#	tf.data.Dataset.from_tensors(TRAIN_URL)
-	def put_data(dataholder):
-
+	def put_data(dataholder,label):
+		global label
 		path = "/home/maya/machinelearning2/PRECIP_HLY_sample_csv.csv"
 
 		with open(path) as csv_file:
@@ -32,7 +32,7 @@ class Learnmachine:
 				dataobject = tf.Variable(row, tf.float64)
 				#next, move each tensor to a dictionary				
 				#for now, names of the feature are just ints but i know that's gross				
-				label = label + 1
+				label += 1
 				labelobject = tf.Variable(label, string)
 				dataholder[label] = dataobject
 
