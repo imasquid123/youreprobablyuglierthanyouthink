@@ -1,6 +1,6 @@
 import tensorflow as tf
 import csv
-
+label = 0
 
 def BigBang():
 
@@ -13,28 +13,33 @@ def BigBang():
 class Learnmachine:
 	def __init__(self):
 		self.dataholder = {}
-
+		self.keys = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
 		#input_training_data()
 
 	#def input_training_data(TRAIN_URL):
 	#	tf.data.Dataset.from_tensors(TRAIN_URL)
-	def put_data(dataholder,label):
+	def put_data(dataholder):
 		global label
+
 		path = "/home/maya/machinelearning2/PRECIP_HLY_sample_csv.csv"
-
 		with open(path) as csv_file:
-			reader = csv.reader(csv_file, delimiter = ',')
+			csvdata = csv.reader(csv_file, delimiter = ',')
+			label = 0
+			for row in csvdata:
+				#value of the csv data as a Tensor
+				csvdataobject = tf.Variable(csvdata, tf.string)			
+				
+				#count up for the labels
+				label = label + 1
 
-			for row in reader:
+				#tensor for the labels
+				labelobject = tf.Variable(label, tf.float64)
 
-				#first, make data into tensors
-				#Does row reference the individual data point?
-				dataobject = tf.Variable(row, tf.float64)
-				#next, move each tensor to a dictionary				
-				#for now, names of the feature are just ints but i know that's gross				
-				label += 1
-				labelobject = tf.Variable(label, string)
-				dataholder[label] = dataobject
+				#giving the dictionary 'dataholder' access to the Tensors containing the csv data
+				dataholder.__setitem__(self, keys, csvdataobject)
+
+				#dictionary with the keys as feature names and the values as Tensors
+				dataholder[keys] = labelobject
 
 
 		return dataholder, labelobject
