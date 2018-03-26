@@ -17,6 +17,7 @@ class Learnmachine:
 		#input_training_data()
 
 	#def input_training_data(TRAIN_URL):
+	#jciownfsoifdpejrytlhiewbqrpivdpgteibtumrlnlegdbjy.
 	#	tf.data.Dataset.from_tensors(TRAIN_URL)
 	def put_data(dataholder):
 		global label
