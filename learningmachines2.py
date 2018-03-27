@@ -17,7 +17,7 @@ class Learnmachine:
 		#input_training_data()
 
 	#def input_training_data(TRAIN_URL):
-	#jciownfsoifdpejrytlhiewbqrpivdpgteibtumrlnlegdfu
+	#jciownfsoifdpejrytlhiewbqrpivdpgteibtumrlnlegdfu.
 	#	tf.data.Dataset.from_tensors(TRAIN_URL)
 	def put_data(dataholder):
 		global label
@@ -26,10 +26,21 @@ class Learnmachine:
 		with open(path) as csv_file:
 			csvdata = csv.reader(csv_file, delimiter = ',')
 			label = 0
+			
+			#put the csvdata into a dictionary because python is stupid and you can't assign to literals even if it's an object
 			for row in csvdata:
-				#value of the csv data as a Tensor
-				csvdataobject = tf.Variable(csvdata, tf.string)			
-				
+				row = []
+				stringholder = []
+				#Put the list type 'row' into the dictionary 'stringholder' as a string
+				stringholder = ''.join(row) 
+					#Check the current string for isalpha
+					for row in dict:
+						row.isalpha(row)
+				#value of the csv data as a Tensor, sorted by string vs. num
+				if "currentstring" == true:
+					csvdataobject = tf.Variable(csvdata, tf.string)			
+				else:
+					csvdataobject = tf.Variable(csvdata, tf.int64)
 				#count up for the labels
 				label = label + 1
 
