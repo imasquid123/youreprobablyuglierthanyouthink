@@ -13,12 +13,14 @@ def BigBang():
 class Learnmachine:
 	def __init__(self):
 		self.dataholder = {}
+		self.intholder = {}
+		self.stringholder = {}
 		self.keys = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
 		#input_training_data()
 
 	#def input_training_data(TRAIN_URL):
 	#	tf.data.Dataset.from_tensors(TRAIN_URL)
-	def put_data(dataholder):
+	def put_data(dataholder, stringholder, intholder):
 		global label
 
 		path = "/home/maya/machinelearning2/PRECIP_HLY_sample_csv.csv"
@@ -46,10 +48,13 @@ class Learnmachine:
 				#tensor for the labels
 				labelobject = tf.Variable(label, tf.float64)
 
-				#TODO: multiple objects (both tensorstring and tensorint) in dictionary
-				dataholder[] = tensorstring
+				stringholder[] = tensorstring
+				intholder[] = tensorint
+
 				#dictionary with the keys as feature names and the values as Tensors
 				dataholder[keys] = labelobject
+
+				stringholder.update(intholder,dataholder)
 
 
 		return dataholder, labelobject
