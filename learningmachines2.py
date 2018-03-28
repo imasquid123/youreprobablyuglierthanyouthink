@@ -16,6 +16,8 @@ class Learnmachine:
 		self.intholder = {}
 		self.stringholder = {}
 		self.keys = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
+		# should i do this? Can i define dictionaries without lists?
+		self.garretsuglyface = ['garret', 'is', 'an', 'ugly', 'individual', 'i', 'hate', 'him', 'so', 'much']
 		#input_training_data()
 
 	#def input_training_data(TRAIN_URL):
@@ -31,7 +33,7 @@ class Learnmachine:
 			#put the csvdata into a dictionary because python is stupid and you can't assign to literals even if it's an object
 			for row in csvdata:
 				row = []
-				stringholder = []
+				
 				#Put the list type 'row' into the dictionary 'stringholder' as a string
 				stringholder = ''.join(row) 
 				
@@ -48,8 +50,8 @@ class Learnmachine:
 				#tensor for the labels
 				labelobject = tf.Variable(label, tf.float64)
 
-				stringholder[] = tensorstring
-				intholder[] = tensorint
+				stringholder = tensorstring
+				intholder = tensorint
 
 				#dictionary with the keys as feature names and the values as Tensors
 				dataholder[keys] = labelobject
