@@ -32,23 +32,22 @@ class Learnmachine:
 				stringholder = []
 				#Put the list type 'row' into the dictionary 'stringholder' as a string
 				stringholder = ''.join(row) 
-					#Check the current string for isalpha
-					for row in dict:
-						row.isalpha(row)
+				
+				#Check the current string for isalpha
+				itsastring = stringholder.isalpha()
 				#value of the csv data as a Tensor, sorted by string vs. num
-				if "currentstring" == true:
-					csvdataobject = tf.Variable(csvdata, tf.string)			
+				if itsastring:
+					tensorstring = tf.Variable(row, tf.string)			
 				else:
-					csvdataobject = tf.Variable(csvdata, tf.int64)
+					tensorint = tf.Variable(row, tf.int64)
 				#count up for the labels
 				label = label + 1
 
 				#tensor for the labels
 				labelobject = tf.Variable(label, tf.float64)
 
-				#giving the dictionary 'dataholder' access to the Tensors containing the csv data
-				dataholder.__setitem__(self, keys, csvdataobject)
-
+				#TODO: multiple objects (both tensorstring and tensorint) in dictionary
+				dataholder[] = tensorstring
 				#dictionary with the keys as feature names and the values as Tensors
 				dataholder[keys] = labelobject
 
