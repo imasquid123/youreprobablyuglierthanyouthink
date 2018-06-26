@@ -25,7 +25,7 @@ class Learnmachine:
 	def put_data(dataholder, stringholder, intholder):
 		global label
 
-		path = "/home/maya/machinelearning2/PRECIP_HLY_sample_csv.csv"
+		path = "/home/maya/youreprobablyuglierthanyouthink/PRECIP_HLY_sample_csv.csv"
 		with open(path) as csv_file:
 			csvdata = csv.reader(csv_file, delimiter = ',')
 			label = 0
